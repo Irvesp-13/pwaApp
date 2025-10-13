@@ -6,13 +6,11 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Small utility: set current year in footer elements with id="year"
 (() => {
     try {
         const yearEls = document.querySelectorAll('#year');
         const y = new Date().getFullYear();
         yearEls.forEach(el => { el.textContent = y; });
     } catch (e) {
-        // ignore
     }
 })();

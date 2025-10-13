@@ -8,7 +8,6 @@
     --shadow: 0 6px 18px rgba(15,23,42,0.06);
 }
 
-/* Reset / base */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -20,7 +19,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout */
 .site-header, .site-footer { max-width: 1100px; margin: 0 auto; padding: 1rem; }
 .site-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .brand { display:flex; align-items:center; gap:0.75rem; text-decoration:none; color:var(--text); }
@@ -28,29 +26,20 @@ body {
 .container { max-width: 980px; margin: 1.5rem auto; padding: 1rem; }
 .card { background: var(--card); border-radius:12px; padding:1.25rem; box-shadow: var(--shadow); }
 
-/* Typography */
 h1 { color: var(--primary); margin:0 0 0.5rem 0; }
 p { color: var(--muted); margin:0 0 1rem 0; }
 
-/* Navigation */
 .nav-links { display:flex; gap:1rem; align-items:center; }
 .link { text-decoration:none; color:var(--primary); font-weight:600; padding:0.35rem 0.45rem; border-radius:8px; }
 .link:hover { background: rgba(37,99,235,0.08); }
 
-/* Buttons */
 .btn { display:inline-block; background:var(--primary); color:white; padding:0.6rem 1rem; border-radius:10px; text-decoration:none; font-weight:600; }
 .btn.secondary { background:transparent; color:var(--primary); border:1px solid rgba(37,99,235,0.12); }
 
-/* Forms */
 input[type="text"], select, textarea { width:100%; padding:0.6rem; border-radius:8px; border:1px solid #e6eef8; background: #fbfdff; }
 
-/* Calendar specific */
 #calendar { max-width:900px; margin:1.5rem auto; }
 
-/* Footer */
-.site-footer { text-align:center; color:var(--muted); font-size:0.9rem; }
-
-/* Responsive */
 @media (max-width:640px) {
     .site-header { flex-direction:column; align-items:flex-start; }
     .container { padding:0.5rem; }

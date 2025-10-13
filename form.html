@@ -78,7 +78,6 @@
 
     <script>
         $(function () {
-            // Init Select2 for carrera as well (if desired)
             $('#pais, #carrera').select2({ minimumResultsForSearch: 6 });
 
             function showMessage(text, type = 'success') {
@@ -93,7 +92,6 @@
 
             $('#contactForm').on('submit', function (e) {
                 e.preventDefault();
-                // Simple validation
                 const nombre = $('#nombre').val().trim();
                 const email = $('#email').val().trim();
                 const carrera = $('#carrera').val();
@@ -106,12 +104,9 @@
                     return;
                 }
 
-                // Fake send: show success and reset
                 showMessage('¡Formulario enviado correctamente! Gracias, ' + nombre + '.');
-                // Optionally, here you would send via AJAX to a backend.
                 setTimeout(() => {
                     $('#contactForm')[0].reset();
-                    // Reset select2 widgets
                     $('#pais, #carrera').val(null).trigger('change');
                 }, 1200);
             });
