@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario | PWA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/main.min.css">
+</head>
+
+<body class="p-6 text-center">
+    <header class="site-header">
+        <a href="./index.html" class="brand">
+            <span class="logo">P</span>
+            <span class="brand-name">Mi PWA</span>
+        </a>
+        <nav class="nav-links">
+            <a href="./index.html" class="link">Inicio</a>
+            <a href="./calendar.html" class="link">Calendario</a>
+            <a href="./form.html" class="link">Formulario</a>
+            <a href="./about.html" class="link">Acerca</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h1 class="text-2xl font-bold mb-4">📆 Calendario (FullCalendar)</h1>
+            <div id="calendar"></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">&copy; <span id="year"></span> Mi PWA — Calendario</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es'
+            });
+            calendar.render();
+        });
+    </script>
+
+    <script src="./register.js"></script>
+</body>
+
+</html>

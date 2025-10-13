@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario | PWA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body class="p-6 text-center">
+    <header class="site-header">
+        <a href="./index.html" class="brand">
+            <span class="logo">P</span>
+            <span class="brand-name">Mi PWA</span>
+        </a>
+        <nav class="nav-links">
+            <a href="./index.html" class="link">Inicio</a>
+            <a href="./calendar.html" class="link">Calendario</a>
+            <a href="./form.html" class="link">Formulario</a>
+            <a href="./about.html" class="link">Acerca</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h1 class="text-2xl font-bold mb-4">📝 Formulario (Select2)</h1>
+
+            <div id="form-messages" style="margin-bottom:0.75rem; display:none;"></div>
+
+            <form id="contactForm" class="w-80 mx-auto">
+                <label for="nombre" class="block mb-2 font-semibold">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+
+                <label for="email" class="block mb-2 font-semibold" style="margin-top:0.6rem;">Email</label>
+                <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+
+                <label for="carrera" class="block mb-2 font-semibold" style="margin-top:0.6rem;">Carrera</label>
+                <select id="carrera" name="carrera" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="idesarrollo">Ingeniería en Desarrollo y Gestión de Software</option>
+                    <option value="isistemas">Ingeniería en Sistemas</option>
+                    <option value="iotras">Otra</option>
+                </select>
+
+                <label for="cuatri" class="block mb-2 font-semibold" style="margin-top:0.6rem;">Cuatrimestre</label>
+                <input id="cuatri" name="cuatri" type="number" min="1" max="12" value="10" required />
+
+                <label for="pais" class="block mb-2 font-semibold" style="margin-top:0.6rem;">País</label>
+                <select id="pais" name="pais" class="select w-full" required>
+                    <option value="mx">México</option>
+                    <option value="us">Estados Unidos</option>
+                    <option value="ca">Canadá</option>
+                    <option value="es">España</option>
+                </select>
+
+                <label for="mensaje" class="block mb-2 font-semibold" style="margin-top:0.6rem;">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe un mensaje" required></textarea>
+
+                <div style="margin-top:0.9rem; text-align:center;">
+                    <button type="submit" class="btn">Enviar</button>
+                    <button type="button" id="resetBtn" class="btn secondary" style="margin-left:0.5rem;">Limpiar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">&copy; <span id="year"></span> Mi PWA — Formulario</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#pais').select2();
+        });
+    </script>
+
+    <script>
+        $(function () {
+            // Init Select2 for carrera as well (if desired)
+            $('#pais, #carrera').select2({ minimumResultsForSearch: 6 });
+
+            function showMessage(text, type = 'success') {
+                const el = $('#form-messages');
+                el.text(text).css({ padding: '0.6rem', 'border-radius': '8px' });
+                if (type === 'success') {
+                    el.css({ background: '#ecfdf5', color: '#064e3b', border: '1px solid #bbf7d0', display: 'block' });
+                } else {
+                    el.css({ background: '#fff1f2', color: '#831843', border: '1px solid #fecaca', display: 'block' });
+                }
+            }
+
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault();
+                // Simple validation
+                const nombre = $('#nombre').val().trim();
+                const email = $('#email').val().trim();
+                const carrera = $('#carrera').val();
+                const cuatri = $('#cuatri').val();
+                const pais = $('#pais').val();
+                const mensaje = $('#mensaje').val().trim();
+
+                if (!nombre || !email || !carrera || !cuatri || !pais || !mensaje) {
+                    showMessage('Por favor completa todos los campos.', 'error');
+                    return;
+                }
+
+                // Fake send: show success and reset
+                showMessage('¡Formulario enviado correctamente! Gracias, ' + nombre + '.');
+                // Optionally, here you would send via AJAX to a backend.
+                setTimeout(() => {
+                    $('#contactForm')[0].reset();
+                    // Reset select2 widgets
+                    $('#pais, #carrera').val(null).trigger('change');
+                }, 1200);
+            });
+
+            $('#resetBtn').on('click', function () {
+                $('#contactForm')[0].reset();
+                $('#pais, #carrera').val(null).trigger('change');
+                $('#form-messages').hide();
+            });
+        });
+    </script>
+
+    <script src="./register.js"></script>
+</body>
+
+</html>

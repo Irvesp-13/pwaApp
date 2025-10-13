@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | PWA</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="p-6 text-center">
+    <header class="site-header">
+        <a href="./index.html" class="brand">
+            <span class="logo">P</span>
+            <span class="brand-name">Mi PWA</span>
+        </a>
+        <nav class="nav-links">
+            <a href="./index.html" class="link">Inicio</a>
+            <a href="./calendar.html" class="link">Calendario</a>
+            <a href="./form.html" class="link">Formulario</a>
+            <a href="./about.html" class="link">Acerca</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card text-center">
+            <h1 class="text-3xl font-bold mb-4">🏠 Bienvenido a la PWA</h1>
+            <p>Esta es la página principal de la aplicación.</p>
+            <div style="margin-top:1rem;"><a href="./about.html" class="btn">Conócemas</a></div>
+        </div>
+    </main>
+
+    <footer class="site-footer">&copy; <span id="year"></span> Mi PWA — Aplicación de ejemplo</footer>
+
+    <script src="./register.js"></script>
+</body>
+
+</html>
