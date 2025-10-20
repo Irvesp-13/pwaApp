@@ -1,7 +1,8 @@
 {
     "name": "Mi PWA de Gestión de Tareas",
     "short_name": "Gestor PWA",
-    "start_url": "/index.html",
+    "start_url": "/pwaApp/index.html",
+    "scope": "/pwaApp/",
     "display": "standalone",
     "background_color": "#1A202C",
     "theme_color": "#4A90E2",
