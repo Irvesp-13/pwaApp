@@ -1,4 +1,4 @@
-const APP_SHELL_CACHE = 'app-shell-v2';
+const APP_SHELL_CACHE = 'app-shell-v3';
 const DYNAMIC_CACHE = 'dynamic-cache-v1';
 
 const APP_SHELL_ASSETS = [
