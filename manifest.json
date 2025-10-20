@@ -15,6 +15,17 @@
             "src": "/images/icons/512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/images/icons/180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/180-maskable.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ]
 }
