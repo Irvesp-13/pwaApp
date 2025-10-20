@@ -7,6 +7,7 @@ const APP_SHELL_ASSETS = [
     './about.html',
     './style.css',
     './register.js',
+    './manifest.json',
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap'
 ];
 
